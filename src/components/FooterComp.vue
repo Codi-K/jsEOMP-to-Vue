@@ -1,0 +1,31 @@
+<template>
+    <div>
+         <!-- footer -->
+      <footer class="container-fluid text-center bg-dark text-white">
+        <div class="footer-links p-3">
+          <!-- Linked In icon -->
+          <a href="https://za.linkedin.com/" target="_blank">
+            <img src="https://i.postimg.cc/P5qL11vG/linkedin.png" alt="Linked In icon" loading="lazy" class="ficons"></a>
+          <!-- instagram icon -->
+          <a href="https://www.instagram.com/" target="_blank" class="m-1">
+            <img src="https://i.postimg.cc/c4Lh1cd1/instagram.png" alt="instagram icon" loading="lazy" class="ficons"></a>
+          <!-- Github icon -->
+          <a href="https://github.com/Codi-K" target="_blank">
+            <img src="https://i.postimg.cc/h40F5gDJ/github-sign.png" alt="Github icon" loading="lazy" class="ficons"></a>
+        </div>
+        <div class="footer">
+          <p class="m-0">Copyright &copy; Powered by xqcL</p>
+        </div>
+      </footer>
+    </div>
+</template>
+
+<script>
+    export default {
+        
+    }
+</script>
+
+<style scoped>
+
+</style>

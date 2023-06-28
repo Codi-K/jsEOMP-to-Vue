@@ -5,3 +5,60 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Heading */
+.heading {
+    margin: auto;
+    border-radius: 1rem;
+    background-color: grey;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+/* Total price */
+#total {
+    margin: auto;
+    border-radius: 1rem;
+    background-color: grey;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+/* last div  */
+.ldiv {
+    margin-bottom: 10rem;
+    margin-top: 1rem;
+}
+
+/* table */
+table {
+    width: 100%;
+}
+
+/* tabledata */
+#products {
+    margin-bottom: 2rem;
+}
+
+/* table rows  */
+tr, th, .table1 {
+    border: 2px solid rgb(114, 100, 100);
+}
+
+td {
+    padding: .5rem;
+}
+
+/* welcome heading */
+.welcomebox {
+    margin: auto;
+    border-radius: 1rem;
+    background-color: grey;
+    padding: 1rem;
+    margin-top: 1rem;
+}
+
+/* footer icons  */
+.ficons {
+    width: 2rem;
+}

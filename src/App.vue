@@ -1,24 +1,34 @@
 <template>
   <NavbarComp/>
   <router-view/>
+  <FooterComp/>
 </template>
 
 <script>
 
 import NavbarComp from '@/components/NavbarComp'
+import FooterComp from './components/FooterComp.vue'
 
 export default {
   components: {
-  NavbarComp
+    NavbarComp,
+    FooterComp
  }
 }
 </script>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(0, 0, 51);
+
 }
 
+
+/* a tags basically */
+router-link{
+  text-decoration: none;
+  color: white;
+}
 </style>
