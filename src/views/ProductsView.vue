@@ -1,12 +1,16 @@
 <template>
     <div>
-
+        <DataComp/>
     </div>
 </template>
 
 <script>
-    export default {
+import DataComp from '@/components/DataComp.vue'
 
+    export default {
+    components: {
+            DataComp
+        }
     }
 </script>
 

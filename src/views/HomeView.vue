@@ -86,7 +86,7 @@
 
       <!-- button to products page -->
       <div class="Pbutton d-flex justify-content-center mb-4">
-        <router-link to="/product" class="btn btn-outline-light">See all our Desktops</router-link>
+        <router-link to="/products" class="btn btn-outline-light">See all our Desktops</router-link>
       </div>
 
     </div>
