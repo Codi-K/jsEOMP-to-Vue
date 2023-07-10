@@ -24,7 +24,7 @@
         aria-labelledby="exampleModalLabel"
         aria-hidden="true"
       >
-        <div class="modal-dialog">
+        <div class="modal-dialog" >
           <div class="modal-content">
             <div class="modal-header">
               <h1 class="modal-title fs-5" id="exampleModalLabel">
@@ -44,24 +44,27 @@
                 type="text"
                 class="modal-input inputN"
                 placeholder="Enter product name..."
+                v-model="product.name"
               />
               <h5>ImageURL</h5>
               <input
-                type=""
                 class="modal-input inputI"
                 placeholder="Enter image URL..."
+                v-model="product.imageUrl"
               />
               <h5>Details</h5>
               <input
                 type="text"
                 class="modal-input inputD"
                 placeholder="Enter details of product..."
+                v-model="product.details"
               />
               <h5>Price</h5>
               <input
                 type="text"
                 class="modal-input inputP"
                 placeholder="Enter price..."
+                v-model="product.price"
               />
             </div>
             <div class="modal-footer">
@@ -72,7 +75,7 @@
               >
                 Close
               </button>
-              <button type="button" class="btn btn-secondary newproduct">
+              <button type="submit" class="btn btn-secondary newproduct" @submit.prevent="addProduct">
                 Add New Product
               </button>
             </div>
@@ -215,8 +218,36 @@ export default {
   mounted() {
     this.$store.dispatch("fetchDesktop");
   },
+  name: "addProduct",
+  data() {
+    return {
+      product: {
+        name: "",
+        imageUrl: "",
+        details: "",
+        price: "",
+      },
+    };
+  },
+  methods: {
+    addProduct() {
+      fetch("https://codi-k.github.io/JSeompVUE-json-server/data.json", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: this.name,
+          imageUrl: this.imageUrl,
+          details: this.details,
+          price: this.price
+        }),
+      })
+        .then(response => response.json())
+        .then(data => console.log(data))
+    }
+  }
 };
-
 </script>
 
 <style scoped></style>
