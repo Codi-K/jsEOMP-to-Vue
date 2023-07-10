@@ -113,26 +113,28 @@
     </div>
     <div class="container">
         <div class="row">
-      <div class="col p-3 text-center" v-for="item in data" :key="item.div">
+      <div class="col p-3 text-center" v-for="item in desktop" :key="item.id">
         <div
           class="card text-bg-dark border-light container-fluid"
           style="width: 25rem"
         >
           <h4>{{ item.name }}</h4>
           <img
-            v-bind:src="item.imageUrl"
+           :src="item.imageUrl"
             class="card-img-top"
             loading="lazy"
-            v-bind:alt="item.name"
+            :alt="item.name"
           />
           <div class="card-body">
             <h5 class="card-text">{{ item.details }}</h5>
             <h5 class="card-text p-2 text-success">R {{ item.price }}</h5>
-            <center>
-              <button type="button" class="btn btn-outline-light">
+
+              <button type="button" class="btn btn-outline-light m-2 ">
                 Add to Cart
               </button>
-            </center>
+              <button type="button" class="btn btn-outline-light">
+                View More
+              </button>
           </div>
         </div>
       </div>
@@ -143,23 +145,14 @@
 
 <script>
 export default {
-  data() {
-    return {
-      data: [],
-    };
-  },
-  methods: {
-    async fetchData() {
-      const res = await fetch(
-        "https://codi-k.github.io/JSeompVUE-json-server/data.json"
-      );
-      let parsedData = await res.json();
-      this.data = parsedData.desktop;
+  computed: {
+    desktop() {
+      return this.$store.state.desktop
     },
   },
-  mounted() {
-    this.fetchData();
-  },
+      mounted() {
+      this.$store.dispatch("fetchDesktop")
+    },
 };
 </script>
 

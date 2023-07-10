@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="checkout">
        <!-- heading -->
             <div class="heading">
               <h2 class="head text-white text-center">
@@ -33,5 +33,6 @@
 </script>
 
 <style scoped>
+
 
 </style>

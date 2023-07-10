@@ -94,9 +94,9 @@
           <th id="td7">Delete</th>
         </thead>
         <!-- Display products on table from Js -->
-        <tbody id="products"  v-for="item in data" :key="item.div">
+        <tbody id="products" v-for="item in desktop" :key="item.div">
           <tr class="tr">
-            <td id="td2">{{item.name}}</td>
+            <td id="td2">{{ item.name }}</td>
             <td id="td3">
               <img
                 class="image-fluid image"
@@ -106,8 +106,8 @@
                 v-bind:alt="item.name"
               />
             </td>
-            <td id="td4">{{item.details}}</td>
-            <td id="td5" class="text-success">R{{item.price}}</td>
+            <td id="td4">{{ item.details }}</td>
+            <td id="td5" class="text-success">R{{ item.price }}</td>
             <td id="td6">
               <!-- Button trigger modal -->
               <button
@@ -207,26 +207,16 @@
 
 <script>
 export default {
-    data() {
-        return {
-            data: [],
-        };
+  computed: {
+    desktop() {
+      return this.$store.state.desktop;
     },
-    methods: {
-        async fetchData() {
-            const res = await fetch(
-                "https://codi-k.github.io/JSeompVUE-json-server/data.json"
-            );
-            let parsedData = await res.json();
-            this.data = parsedData.desktop;
-        },
-    },
-    mounted() {
-        this.fetchData();
-    },
+  },
+  mounted() {
+    this.$store.dispatch("fetchDesktop");
+  },
 };
+
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
